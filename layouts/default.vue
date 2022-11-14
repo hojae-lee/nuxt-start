@@ -12,8 +12,5 @@ export default {
   components: {
     AppHeader
   }
-  // created() {
-  //   console.log(this.$route);
-  // }
 }
 </script>
