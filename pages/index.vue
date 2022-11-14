@@ -2,7 +2,7 @@
   <div class="app">
     <main>
       <div>
-        <input type="text" />
+        <search-input v-model="searchKeyWord" @search="searchProducts"></search-input>
       </div>
       <ul>
         <li v-for="product in products" :key="product.id" class="item flex" @click="moveToDetailPage(product.id)">
@@ -20,9 +20,12 @@
 
 <script>
 import axios from 'axios';
+import SearchInput from '@/components/SearchInput.vue';
+import { fetchProductsByKeyword } from '@/api'
 
 export default {
   components: {
+    SearchInput
   },
   // data() {
   //   return {
@@ -46,10 +49,25 @@ export default {
 
     return { products }
   },
+  data() {
+    return {
+      searchKeyWord: ''
+    }
+  },
   methods: {
     moveToDetailPage(id) {
-      console.log(id);
       this.$router.push(`detail/${id}`);
+    },
+    async searchProducts() {
+      const response = await fetchProductsByKeyword(this.searchKeyWord);
+      // this.products 를 정의하지 않았지만, asyncData 에서 정의했음으로 사용할 수 있음.
+      this.products = response.data.map(item => {
+        return{
+          // item 에 있는 속성을 해쉬(키, 벨류) 값으로 넣어줌.
+          ...item,
+          imageUrl: `${item.imageUrl}?random=${Math.random()}`
+        }
+      });
     }
   }
 }
