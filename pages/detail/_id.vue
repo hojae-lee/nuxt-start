@@ -11,14 +11,14 @@
       <div class="side-panel">
         <p class="name">{{ product.name }}</p>
         <p class="price">{{ product.price }}</p>
-        <button type="button" @click="addToCart">Add to Cart</button>
+        <button type="button" @click="addToCart">담기</button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { fetchProductById } from '@/api'
+import { fetchProductById, createCartItem } from '@/api'
 
 export default {
   // _id.vue 라는 패턴을 사용하면, _id 로 연동되서 들어옴. _ 가 라우터의 파라미터이고 id 는 값으로 인식합니다.
@@ -34,9 +34,9 @@ export default {
   },
   methods: {
     async addToCart() {
-      // await createCartItem(this.product)
-      // this.$store.commit('addItemToCart', this.product)
-      // this.$router.push('/cart')
+      await createCartItem(this.product);
+      this.$store.commit('addCartItem', this.product);
+      this.$router.push('/cart');
     },
   },
 }

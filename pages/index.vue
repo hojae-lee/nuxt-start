@@ -12,7 +12,7 @@
         </li>
       </ul>
       <div class="cart-wrapper">
-        <button class="btn">장바구니 바로가기</button>
+        <button class="btn" @click="addToCart">장바구니 바로가기</button>
       </div>
     </main>
   </div>
@@ -40,7 +40,7 @@ export default {
   async asyncData() {
     const response = await axios.get('http://localhost:3000/products');
     const products = response.data.map(item => {
-      return{
+      return {
         // item 에 있는 속성을 해쉬(키, 벨류) 값으로 넣어줌.
         ...item,
         imageUrl: `${item.imageUrl}?random=${Math.random()}`
@@ -57,6 +57,9 @@ export default {
   methods: {
     moveToDetailPage(id) {
       this.$router.push(`detail/${id}`);
+    },
+    addToCart() {
+      this.$router.push('/cart');
     },
     async searchProducts() {
       const response = await fetchProductsByKeyword(this.searchKeyWord);
