@@ -27,6 +27,12 @@ export const getters = {
 export const actions = {
   async [FETCH_CART_ITEMS]({ commit }) {
     const res = await fetchCartItems();
-    commit('setCartItmes', res.data);
+    commit('setCartItmes', res.data.map((item) => ({
+      ...item,
+      imageUrl: `${item.imageUrl}?random=${Math.random()}`
+    })));
+  },
+  nuxtServerInit() {
+    // 스토어가 생성되는 시점에 사용되는 액션
   }
 }
