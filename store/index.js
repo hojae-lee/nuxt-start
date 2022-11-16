@@ -32,7 +32,12 @@ export const actions = {
       imageUrl: `${item.imageUrl}?random=${Math.random()}`
     })));
   },
-  nuxtServerInit() {
+  async nuxtServerInit(storeContext, nuxtContext) {
     // 스토어가 생성되는 시점에 사용되는 액션
+    const res = await fetchCartItems();
+    storeContext.commit('setCartItmes', res.data.map((item) => ({
+      ...item,
+      imageUrl: `${item.imageUrl}?random=${Math.random()}`
+    })));
   }
 }

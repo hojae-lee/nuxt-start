@@ -20,9 +20,9 @@
 
 <script>
 export default {
-  async asyncData({ store }) {
-    await store.dispatch('FETCH_CART_ITEMS');
-  },
+  // async asyncData({ store }) {
+  //   await store.dispatch('FETCH_CART_ITEMS');
+  // },
   computed: {
     getCartItem() {
       return this.$store.getters.getCartItem;
