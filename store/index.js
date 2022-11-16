@@ -32,14 +32,14 @@ export const actions = {
       imageUrl: `${item.imageUrl}?random=${Math.random()}`
     })));
   },
-  // async nuxtServerInit(storeContext, nuxtContext) {
-  //   // 스토어가 생성되는 시점에 사용되는 액션
-  //   await storeContext.dispatch(FETCH_CART_ITEMS)
+  async nuxtServerInit(storeContext, nuxtContext) {
+    // 스토어가 생성되는 시점에 사용되는 액션
+    await storeContext.dispatch(FETCH_CART_ITEMS)
 
-  //   // const res = await fetchCartItems();
-  //   // storeContext.commit('setCartItmes', res.data.map((item) => ({
-  //   //   ...item,
-  //   //   imageUrl: `${item.imageUrl}?random=${Math.random()}`
-  //   // })));
-  // }
+    // const res = await fetchCartItems();
+    // storeContext.commit('setCartItmes', res.data.map((item) => ({
+    //   ...item,
+    //   imageUrl: `${item.imageUrl}?random=${Math.random()}`
+    // })));
+  }
 }
