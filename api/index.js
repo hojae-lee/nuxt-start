@@ -21,10 +21,14 @@ function fetchCartItems() {
   return instance.get(`/carts`);
 }
 
+function fetchProducts() {
+  return instance.get(`/products`)
+}
+
 async function createCartItem(cartItem) {
   await fetchCartItems();
 
   return instance.post(`/carts`, cartItem);
 }
 
-export { fetchProductById, fetchProductsByKeyword, createCartItem, fetchCartItems }
+export { fetchProductById, fetchProductsByKeyword, createCartItem, fetchCartItems, fetchProducts }
