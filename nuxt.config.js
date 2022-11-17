@@ -1,4 +1,6 @@
 export default {
+  // ssr, ssg 어떤 식으로 배포할지. ssg: static, ssr: server(default)
+  target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-start',
