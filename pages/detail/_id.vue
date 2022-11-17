@@ -32,6 +32,16 @@ export default {
 
     return { product }
   },
+  head: {
+    title: '아이템',
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: '이 상품은 입니다!',
+      },
+    ]
+  },
   methods: {
     async addToCart() {
       await createCartItem(this.product);
