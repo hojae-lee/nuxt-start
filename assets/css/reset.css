@@ -20,7 +20,6 @@ body {
 body {
   display: flex;
   flex-direction: column;
-
   text-align: center;
   background-color: #00c58e;
   margin: 0;
