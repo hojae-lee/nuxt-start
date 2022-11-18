@@ -67,3 +67,15 @@ This directory contains your Vuex store files. Creating a file in this directory
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 # nuxt-start
+
+### ssg
+
+네트리파이: https://63774d060036b10009e4c9b2--nimble-pie-1ab2ab.netlify.app/
+
+1. (nuxt.config.js 에서 target 을 static 으로 변경)
+2. npm run generate 하면 dist 폴더가 생성.
+
+### ssr
+
+1. server 로 변경 후, build 후 start 시 로컬에서 볼 수 있음.
+2. heroku 를 사용하여 배포.
