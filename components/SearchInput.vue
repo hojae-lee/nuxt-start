@@ -27,7 +27,7 @@ export default {
   font-weight: 500;
 }
 .btn {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 </style>

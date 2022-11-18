@@ -1,21 +1,19 @@
 <template>
   <div class="app">
-    <main>
-      <div>
-        <search-input v-model="searchKeyWord" @search="searchProducts"></search-input>
-      </div>
-      <ul>
-        <li v-for="product in products" :key="product.id" class="item flex" @click="moveToDetailPage(product.id)">
-          <img :src="product.imageUrl" :alt="product.name" class="product-image">
-          <p>{{ product.name }}</p>
-          <p>{{ product.price }}</p>
-        </li>
-      </ul>
-      <div class="cart-wrapper">
-        <button class="btn" @click="addToCart">장바구니 바로가기</button>
-        <button class="btn" @click="moveToTest">count 페이지 바로가기</button>
-      </div>
-    </main>
+    <div>
+      <search-input v-model="searchKeyWord" @search="searchProducts"></search-input>
+    </div>
+    <ul>
+      <li v-for="product in products" :key="product.id" class="item flex" @click="moveToDetailPage(product.id)">
+        <img :src="product.imageUrl" :alt="product.name" class="product-image">
+        <p>{{ product.name }}</p>
+        <p>{{ product.price }}</p>
+      </li>
+    </ul>
+    <div class="cart-wrapper">
+      <button class="btn" @click="addToCart">장바구니 바로가기</button>
+      <button class="btn" @click="moveToTest">count 페이지 바로가기</button>
+    </div>
   </div>
 </template>
 
@@ -107,7 +105,6 @@ export default {
 }
 .cart-wrapper .btn {
   display: inline-block;
-  height: 40px;
   font-size: 1rem;
   font-weight: 500;
 }
