@@ -13,6 +13,7 @@
       </ul>
       <div class="cart-wrapper">
         <button class="btn" @click="addToCart">장바구니 바로가기</button>
+        <button class="btn" @click="moveToTest">count 페이지 바로가기</button>
       </div>
     </main>
   </div>
@@ -70,6 +71,9 @@ export default {
           imageUrl: `${item.imageUrl}?random=${Math.random()}`
         }
       });
+    },
+    moveToTest() {
+      this.$router.push(`/count`);
     }
   }
 }
