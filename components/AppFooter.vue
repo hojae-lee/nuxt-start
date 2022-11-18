@@ -11,16 +11,16 @@ export default {
 </script>
 
 <style scoped>
-  footer {
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding: 0 0.5rem;
-  }
-  .logo {
-    font-weight: 900;
-  }
-  .logo:visited {
-    color: inherit;
-  }
+footer {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+.logo {
+  font-weight: 900;
+}
+.logo:visited {
+  color: inherit;
+}
 </style>
